@@ -1,6 +1,6 @@
 import unittest
 from PyQt5.QtWidgets import *
-from real_thing.espapy.espapy.gui import file_loader
+from espapy.gui import file_loader
 
 
 class MyTestCase(unittest.TestCase):

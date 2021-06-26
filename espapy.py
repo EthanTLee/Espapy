@@ -1,4 +1,4 @@
-from real_thing.espapy.espapy.utils import plot_attributes, data_file
+from espapy.utils import plot_attributes, data_file
 import matplotlib.pyplot as plt
 
 my_data = data_file.DataFile(

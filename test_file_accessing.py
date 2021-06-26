@@ -1,5 +1,5 @@
 import unittest
-from real_thing.espapy.espapy.utils import file_accessing
+from espapy.utils import file_accessing
 
 
 class TestFileLoading(unittest.TestCase):
