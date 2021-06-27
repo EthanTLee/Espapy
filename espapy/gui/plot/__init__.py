@@ -12,6 +12,9 @@ class Plot(QWidget):
         self.setLayout(self.main_layout)
 
     def update_plot(self, x_data, y_data):
-        self.canvas.axes.cla()
+        self.clear_plot()
         self.canvas.axes.plot(x_data, y_data)
         self.canvas.draw()
+
+    def clear_plot(self):
+        self.canvas.axes.cla()

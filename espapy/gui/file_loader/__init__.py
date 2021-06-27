@@ -35,3 +35,10 @@ class FileLoader(QWidget):
         self.main_layout.addWidget(self.group_box)
         self.setLayout(self.main_layout)
 
+    def clear_form(self):
+        self.le_file.clear()
+        self.le_intensity_max.clear()
+        self.le_intensity_min.clear()
+        self.le_wavelength_max.clear()
+        self.le_wavelength_min.clear()
+
