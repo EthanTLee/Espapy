@@ -1,18 +1,51 @@
+from PyQt5.QtWidgets import *
+from espapy import gui
 from espapy.utils import plot_attributes, data_file
-import matplotlib.pyplot as plt
-
-my_data = data_file.DataFile(
-    file_path="/initial_testing/from_nadine_Jun23/1834099in.s",
-    file_line_num_of_first_data=3
-)
-
-my_plot_range = plot_attributes.Range(0, 2)
-my_plot_domain = plot_attributes.Domain(500, 600)
-
-plt.plot(my_data.data["Wavelength"], my_data.data["Intensity"])
-plt.xlim(my_plot_domain.minimum, my_plot_domain.maximum)
-plt.ylim(my_plot_range.minimum, my_plot_range.maximum)
-
-plt.show()
 
 
+class Espapy():
+    def __init__(self):
+        #super().__init__()
+        self.main_gui = gui.Gui()
+
+        self.main_gui.data_file_loader.button_plot.clicked.connect(self.on_button_plot_clicked)
+        self.main_gui.data_file_loader.button_clear.clicked.connect(self.on_button_clear_clicked)
+        self.main_gui.show()
+
+        self.current_data_file = None
+
+    def on_button_plot_clicked(self):
+        plot_range = plot_attributes.Range(
+            self.main_gui.data_file_loader.get_intensity_min(),
+            self.main_gui.data_file_loader.get_intensity_max()
+        )
+
+        plot_domain = plot_attributes.Domain(
+            self.main_gui.data_file_loader.get_wavelength_min(),
+            self.main_gui.data_file_loader.get_wavelength_max()
+        )
+
+        file_name = self.main_gui.data_file_loader.get_file_name()
+
+        self.current_data_file = data_file.DataFile(file_name, file_line_num_of_first_data=3)
+
+        self.main_gui.data_plot.update_plot(
+            x_data=self.current_data_file.wavelength_data(),
+            y_data=self.current_data_file.intensity_data(),
+            domain=plot_domain,
+            range=plot_range
+        )
+
+    def on_button_clear_clicked(self):
+        self.main_gui.data_plot.clear_plot()
+        self.main_gui.data_file_loader.clear_form()
+
+
+def main():
+    app = QApplication([])
+    espapy = Espapy()
+    app.exec_()
+
+
+if __name__ == '__main__':
+    main()
