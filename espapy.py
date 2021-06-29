@@ -5,7 +5,6 @@ from espapy.utils import plot_attributes, data_file
 
 class Espapy():
     def __init__(self):
-        #super().__init__()
         self.main_gui = gui.Gui()
 
         self.main_gui.data_file_loader.button_plot.clicked.connect(self.on_button_plot_clicked)
@@ -27,7 +26,7 @@ class Espapy():
 
         file_name = self.main_gui.data_file_loader.get_file_name()
 
-        self.current_data_file = data_file.DataFile(file_name, file_line_num_of_first_data=3)
+        self.current_data_file = data_file.DataFile(file_name)
 
         self.main_gui.data_plot.update_plot(
             x_data=self.current_data_file.wavelength_data(),

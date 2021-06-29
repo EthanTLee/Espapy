@@ -1,3 +1,8 @@
+import matplotlib
+matplotlib.use('Qt5Agg')
+
+from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+
 from PyQt5.QtWidgets import *
 from . import canvas
 
@@ -7,7 +12,10 @@ class Plot(QWidget):
         super().__init__()
         self.canvas = canvas.MplCanvas(width=5, height=4, dpi=100)
         self.canvas.axes.plot(x_data, y_data)
-        self.main_layout = QHBoxLayout()
+        self.toolbar = NavigationToolbar(self.canvas, self)
+
+        self.main_layout = QVBoxLayout()
+        self.main_layout.addWidget(self.toolbar)
         self.main_layout.addWidget(self.canvas)
         self.setLayout(self.main_layout)
 
