@@ -16,7 +16,7 @@ Install Astropy: `conda install -c anaconda astropy`
 
 ### How to run ###
 
-First install the dependencies, then run the 'espapy.py' file contained in this directory.
+First install the dependencies, then run the `espapy.py` file contained in this directory.
 
 Run using: `python espapy.py`
 
