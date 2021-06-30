@@ -10,8 +10,8 @@ class FileLoader(QWidget):
         self.inner_form_layout = QFormLayout()
 
         self.l_file = QLabel("File:")
-        self.l_wavelength_min = QLabel("Min wavelength:")
-        self.l_wavelength_max = QLabel("Max wavelength:")
+        self.l_wavelength_min = QLabel("Min wavelength (nm):")
+        self.l_wavelength_max = QLabel("Max wavelength (nm):")
         self.l_intensity_min = QLabel("Min intensity:")
         self.l_intensity_max = QLabel("Max intensity:")
 

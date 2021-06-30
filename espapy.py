@@ -3,7 +3,7 @@ from espapy import gui
 from espapy.utils import plot_attributes, data_file
 
 
-class Espapy():
+class Espapy:
     def __init__(self):
         self.main_gui = gui.Gui()
 
