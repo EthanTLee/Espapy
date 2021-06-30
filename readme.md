@@ -10,5 +10,5 @@ Matplotlib, PyQT, Astropy
 
 ## How to run ##
 
-Install the dependencies, run the 'espapy.py' file contained in this directory.
+First install the dependencies, then run the 'espapy.py' file contained in this directory.
 
