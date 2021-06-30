@@ -32,7 +32,8 @@ class Espapy():
             x_data=self.current_data_file.wavelength_data(),
             y_data=self.current_data_file.intensity_data(),
             domain=plot_domain,
-            range=plot_range
+            range=plot_range,
+            title=self.current_data_file.header_info["title"]
         )
 
     def on_button_clear_clicked(self):

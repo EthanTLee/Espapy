@@ -19,11 +19,14 @@ class Plot(QWidget):
         self.main_layout.addWidget(self.canvas)
         self.setLayout(self.main_layout)
 
-    def update_plot(self, x_data, y_data, domain, range):
+    def update_plot(self, x_data, y_data, domain, range, title):
         self.clear_plot()
         self.canvas.axes.plot(x_data, y_data)
         self.canvas.axes.set_xlim(domain.minimum, domain.maximum)
         self.canvas.axes.set_ylim(range.minimum, range.maximum)
+        self.canvas.axes.set_xlabel("Wavelength (nm)")
+        self.canvas.axes.set_ylabel("Intensity")
+        self.canvas.axes.set_title("Spectrum of " + "\'" + title + "\'")
         self.canvas.draw()
 
     def clear_plot(self):
