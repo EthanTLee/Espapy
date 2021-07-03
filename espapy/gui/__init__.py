@@ -3,6 +3,26 @@ from . import file_loader
 from . import plot
 
 
+class MainWindow(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Espapy")
+        self._create_actions()
+        self._create_menu_bar()
+        self.main_gui = Gui()
+        self.setCentralWidget(self.main_gui)
+
+    def _create_actions(self):
+        self.help_action = QAction("Get Help", self)
+
+    def _create_menu_bar(self):
+        menu_bar = self.menuBar()
+        help_menu = menu_bar.addMenu("&Help")
+        help_menu.addAction(self.help_action)
+
+
+
+
 class Gui(QWidget):
     def __init__(self):
         super().__init__()
