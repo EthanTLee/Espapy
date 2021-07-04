@@ -1,5 +1,5 @@
 from astropy.io import ascii
-from espapy.utils.data_file import order_splitting
+from lib.data_file import order_splitting
 import matplotlib.pyplot as plt
 
 

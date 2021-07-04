@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import *
 from espapy import gui
-from espapy.utils import plot_attributes, data_file
+from lib import plot_attributes, data_file
 
 
 class Espapy:
@@ -28,9 +28,8 @@ class Espapy:
 
         self.current_data_file = data_file.DataFile(file_name)
 
-        self.main_window.main_gui.data_plot.update_plot(
-            x_data=self.current_data_file.wavelength_data(),
-            y_data=self.current_data_file.intensity_data(),
+        self.main_window.main_gui.data_plot.plot_data(
+            data_file=self.current_data_file,
             domain=plot_domain,
             range=plot_range,
             title=self.current_data_file.header_info["title"]

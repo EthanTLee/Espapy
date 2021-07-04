@@ -19,9 +19,9 @@ class Plot(QWidget):
         self.main_layout.addWidget(self.canvas)
         self.setLayout(self.main_layout)
 
-    def update_plot(self, x_data, y_data, domain, range, title):
+    def plot_data(self, data_file, domain, range, title):
         self.clear_plot()
-        self.canvas.axes.plot(x_data, y_data)
+        self._plot_all_spectral_orders(data_file)
         self.canvas.axes.set_xlim(domain.minimum, domain.maximum)
         self.canvas.axes.set_ylim(range.minimum, range.maximum)
         self.canvas.axes.set_xlabel("Wavelength (nm)")
@@ -32,3 +32,7 @@ class Plot(QWidget):
     def clear_plot(self):
         self.canvas.axes.cla()
         self.canvas.draw()
+
+    def _plot_all_spectral_orders(self, data_file):
+        for order_data in data_file.split_data:
+            self.canvas.axes.plot(order_data["wavelength"], order_data["intensity"])

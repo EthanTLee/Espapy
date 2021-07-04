@@ -6,7 +6,7 @@ def test_gui_plot():
     app = QApplication([])
     test_plot = plot.Plot(x_data=[1,2,3,4], y_data=[1,6,2,-1])
     test_plot.show()
-    test_plot.update_plot([20,21,22,23], [1,2,3,10])
+    test_plot.plot_data([20, 21, 22, 23], [1, 2, 3, 10])
     app.exec_()
 
 
