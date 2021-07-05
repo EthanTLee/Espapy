@@ -34,5 +34,5 @@ class Plot(QWidget):
         self.canvas.draw()
 
     def _plot_all_spectral_orders(self, data_file):
-        for order_data in data_file.split_data:
-            self.canvas.axes.plot(order_data["wavelength"], order_data["intensity"], alpha=0.8)
+        for order in data_file.spectral_orders:
+            self.canvas.axes.plot(order.wavelength_data(), order.intensity_data(), alpha=0.8)

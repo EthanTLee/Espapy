@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import *
 from espapy import gui
-from lib import plot_attributes, data_file
+from lib import set_attributes, data_file
 
 
 class Espapy:
@@ -14,19 +14,19 @@ class Espapy:
         self.current_data_file = None
 
     def on_button_plot_clicked(self):
-        plot_range = plot_attributes.Range(
+        plot_range = set_attributes.Range(
             self.main_window.main_gui.data_file_loader.get_intensity_min(),
             self.main_window.main_gui.data_file_loader.get_intensity_max()
         )
 
-        plot_domain = plot_attributes.Domain(
+        plot_domain = set_attributes.Domain(
             self.main_window.main_gui.data_file_loader.get_wavelength_min(),
             self.main_window.main_gui.data_file_loader.get_wavelength_max()
         )
 
-        file_name = self.main_window.main_gui.data_file_loader.get_file_name()
+        file_path = self.main_window.main_gui.data_file_loader.get_file_name()
 
-        self.current_data_file = data_file.DataFile(file_name)
+        self.current_data_file = data_file.DataFile(file_path)
 
         self.main_window.main_gui.data_plot.plot_data(
             data_file=self.current_data_file,

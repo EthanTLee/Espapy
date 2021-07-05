@@ -1,4 +1,5 @@
 from astropy.io import ascii
+from lib import set_attributes
 from . import header_access
 from . import column_names
 from . import order_splitting
@@ -19,14 +20,7 @@ class DataFile:
             names=data_column_names
         )
 
-        self.split_data = order_splitting.split_into_spectral_orders(self.whole_data)
+        self.spectral_orders = order_splitting.split_into_spectral_orders(self.whole_data)
 
-    def wavelength_data(self, order_num=None):
-        if order_num is None:
-            return self.whole_data["wavelength"]
-        return self.split_data[order_num]["wavelength"]
-
-    def intensity_data(self, order_num=None):
-        if order_num is None:
-            return self.whole_data["intensity"]
-        return self.split_data[order_num]["intensity"]
+    def total_num_orders(self):
+        return len(self.spectral_orders)

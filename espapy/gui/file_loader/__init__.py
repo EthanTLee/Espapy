@@ -16,7 +16,7 @@ class FileLoader(QWidget):
         self.l_intensity_max = QLabel("Max intensity:")
 
         self.le_file = QLineEdit()
-        self.le_file.setPlaceholderText("e.g. /my_data/my_data_file.s")
+        self.le_file.setPlaceholderText("e.g. data_file.s")
         self.le_wavelength_min = QLineEdit()
         self.le_wavelength_min.setPlaceholderText("e.g. 450")
         self.le_wavelength_max = QLineEdit()
