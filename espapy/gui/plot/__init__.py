@@ -4,6 +4,7 @@ matplotlib.use('Qt5Agg')
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
 from PyQt5.QtWidgets import *
+from lib import set_attributes
 from . import canvas
 
 
@@ -36,3 +37,8 @@ class Plot(QWidget):
     def _plot_all_spectral_orders(self, data_file):
         for order in data_file.spectral_orders:
             self.canvas.axes.plot(order.wavelength_data(), order.intensity_data(), alpha=0.8)
+
+    def get_current_domain(self):
+        domain = set_attributes.Domain(self.canvas.axes.get_xlim()[0], self.canvas.axes.get_xlim()[1])
+        return domain
+

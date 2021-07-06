@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import *
 from espapy import gui
+from espapy import utils
 from lib import set_attributes, data_file
 
 
@@ -9,7 +10,10 @@ class Espapy:
 
         self.main_window.main_gui.data_file_loader.button_plot.clicked.connect(self.on_button_plot_clicked)
         self.main_window.main_gui.data_file_loader.button_clear.clicked.connect(self.on_button_clear_clicked)
+        self.main_window.main_gui.max_finder.find_max_button.clicked.connect(self.on_button_find_max_clicked)
         self.main_window.show()
+
+        self.main_window.main_gui.text_display.add_text_line("--- Welcome to Espapy ---")
 
         self.current_data_file = None
 
@@ -38,6 +42,13 @@ class Espapy:
     def on_button_clear_clicked(self):
         self.main_window.main_gui.data_plot.clear_plot()
         self.main_window.main_gui.data_file_loader.clear_form()
+
+    def on_button_find_max_clicked(self):
+        current_domain = self.main_window.main_gui.data_plot.get_current_domain()
+        max_intensity_point_in_domain = utils.get_max_intensity_point_in_domain(self.current_data_file, current_domain)
+        self.main_window.main_gui.text_display.add_text_line(
+            str(max_intensity_point_in_domain.x) + " " + str(max_intensity_point_in_domain.y)
+        )
 
 
 def main():

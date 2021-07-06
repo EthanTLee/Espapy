@@ -1,6 +1,6 @@
 import numpy as np
 from lib.indexes_in_domain import get_indexes_in_domain
-from lib.data_point import DataPoint
+from lib.data_point import DataPoint, get_point_with_greatest_y_value
 
 
 def get_intensities_in_domain(spectral_order, domain):
@@ -40,7 +40,7 @@ def get_max_intensity_point_in_domain(data_file, domain):
             domain
         )
         max_intensity_per_order.append(max_intensity)
-    overall_max_intensity = max(max_intensity_per_order)
+    overall_max_intensity = get_point_with_greatest_y_value(max_intensity_per_order)
 
     return overall_max_intensity
 

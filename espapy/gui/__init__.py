@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
 from . import file_loader
 from . import plot
+from . import text_display
+from . import max_finder
 
 
 class MainWindow(QMainWindow):
@@ -31,7 +33,11 @@ class Gui(QWidget):
         super().__init__()
         self.data_file_loader = file_loader.FileLoader()
         self.data_plot = plot.Plot()
-        self.main_layout = QHBoxLayout()
-        self.main_layout.addWidget(self.data_plot)
-        self.main_layout.addWidget(self.data_file_loader)
+        self.text_display = text_display.TextDisplay()
+        self.max_finder = max_finder.MaxFinder()
+        self.main_layout = QGridLayout()
+        self.main_layout.addWidget(self.data_plot, 0, 0)
+        self.main_layout.addWidget(self.data_file_loader, 0, 1)
+        self.main_layout.addWidget(self.text_display, 1, 0)
+        self.main_layout.addWidget(self.max_finder, 1, 1)
         self.setLayout(self.main_layout)
