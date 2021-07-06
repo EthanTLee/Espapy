@@ -47,7 +47,12 @@ class Espapy:
         current_domain = self.main_window.main_gui.data_plot.get_current_domain()
         max_intensity_point_in_domain = utils.get_max_intensity_point_in_domain(self.current_data_file, current_domain)
         self.main_window.main_gui.text_display.add_text_line(
-            str(max_intensity_point_in_domain.x) + " " + str(max_intensity_point_in_domain.y)
+            "Maximum intensity of " +
+            str(max_intensity_point_in_domain.y) + " " +
+            "found at " +
+            str(max_intensity_point_in_domain.x) + " " +
+            "nm"
+
         )
 
 
