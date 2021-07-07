@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
 from espapy import gui
 from espapy import utils
 from lib import set_attributes, data_file
@@ -72,6 +73,11 @@ class Espapy:
 
 def main():
     app = QApplication([])
+
+
+    icon = QIcon('./icon/espadon2.png')
+    app.setWindowIcon(icon)
+
     espapy = Espapy()
     app.exec_()
 
