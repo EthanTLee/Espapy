@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from . import file_loader
 from . import plot
 from . import text_display
-from . import max_finder
+from . import analysis_tools
 
 
 class MainWindow(QMainWindow):
@@ -34,10 +34,10 @@ class Gui(QWidget):
         self.data_file_loader = file_loader.FileLoader()
         self.data_plot = plot.Plot()
         self.text_display = text_display.TextDisplay()
-        self.max_finder = max_finder.MaxFinder()
+        self.analysis_tools = analysis_tools.AnalysisTools()
         self.main_layout = QGridLayout()
         self.main_layout.addWidget(self.data_plot, 0, 0)
         self.main_layout.addWidget(self.data_file_loader, 0, 1)
         self.main_layout.addWidget(self.text_display, 1, 0)
-        self.main_layout.addWidget(self.max_finder, 1, 1)
+        self.main_layout.addWidget(self.analysis_tools, 1, 1)
         self.setLayout(self.main_layout)

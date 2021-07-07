@@ -42,3 +42,6 @@ class Plot(QWidget):
         domain = set_attributes.Domain(self.canvas.axes.get_xlim()[0], self.canvas.axes.get_xlim()[1])
         return domain
 
+    def plot_point(self, data_point, color):
+        self.canvas.axes.scatter(data_point.x, data_point.y, color=color)
+        self.canvas.draw()

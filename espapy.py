@@ -10,7 +10,9 @@ class Espapy:
 
         self.main_window.main_gui.data_file_loader.button_plot.clicked.connect(self.on_button_plot_clicked)
         self.main_window.main_gui.data_file_loader.button_clear.clicked.connect(self.on_button_clear_clicked)
-        self.main_window.main_gui.max_finder.find_max_button.clicked.connect(self.on_button_find_max_clicked)
+        self.main_window.main_gui.analysis_tools.find_max_button.clicked.connect(self.on_button_find_max_clicked)
+        self.main_window.main_gui.analysis_tools.find_min_button.clicked.connect(self.on_button_find_min_clicked)
+
         self.main_window.show()
 
         self.main_window.main_gui.text_display.add_text_line("--- Welcome to Espapy ---")
@@ -46,13 +48,25 @@ class Espapy:
     def on_button_find_max_clicked(self):
         current_domain = self.main_window.main_gui.data_plot.get_current_domain()
         max_intensity_point_in_domain = utils.get_max_intensity_point_in_domain(self.current_data_file, current_domain)
+        self.main_window.main_gui.data_plot.plot_point(max_intensity_point_in_domain, color='red')
         self.main_window.main_gui.text_display.add_text_line(
             "Maximum intensity of " +
             str(max_intensity_point_in_domain.y) + " " +
             "found at " +
             str(max_intensity_point_in_domain.x) + " " +
             "nm"
+        )
 
+    def on_button_find_min_clicked(self):
+        current_domain = self.main_window.main_gui.data_plot.get_current_domain()
+        min_intensity_point_in_domain = utils.get_min_intensity_point_in_domain(self.current_data_file, current_domain)
+        self.main_window.main_gui.data_plot.plot_point(min_intensity_point_in_domain, color='blue')
+        self.main_window.main_gui.text_display.add_text_line(
+            "Minimum intensity of " +
+            str(min_intensity_point_in_domain.y) + " " +
+            "found at " +
+            str(min_intensity_point_in_domain.x) + " " +
+            "nm"
         )
 
 
