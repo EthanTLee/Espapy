@@ -74,9 +74,8 @@ class Espapy:
 def main():
     app = QApplication([])
 
-
-    icon = QIcon('./icon/espadon2.png')
-    app.setWindowIcon(icon)
+    #icon = QIcon('./icon/icon.png')
+    #app.setWindowIcon(icon)
 
     espapy = Espapy()
     app.exec_()
