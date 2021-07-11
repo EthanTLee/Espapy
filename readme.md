@@ -24,8 +24,11 @@ After the download finishes, double click the file you downloaded to finish sett
 
 ### Step 3: Running Espapy ###
 
-Will fill out this step tomorrow.
+The instructions for running `Espapy` on Windows and MacOS are a little different, so I will first give instructions for MacOS, then Windows. Linux users can follow the same instructions as MacOS users.
 
+#### MacOS ####
+
+In order to run Espapy, first open up the `Terminal` application. You can do this by using the `Spotlight Search` tool or by double clicking the `Terminal` application in your `Utilities` folder. The `Utilities` folder is located in the `Applications` folder. `Terminal` is an application that allows you to type commands to your computer. 
 
 ## Dependencies ##
 
