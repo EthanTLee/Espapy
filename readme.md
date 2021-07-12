@@ -19,7 +19,7 @@ After the download finishes, double click the file you downloaded to finish sett
 
 ### Step 2: Downloading Espapy ###
 
-`Espapy` is a much smaller size than `Anaconda` at under 10 MB. To download it, click the green `↓ Code` button at the top of this page. That should open up a menu where one of the options is `Download ZIP`. Click on `Download ZIP` and a compressed ZIP file that contains `Espapy` will download. It should be called `Espapy-master`. After the download completes, extract the contents of the ZIP file to an accessible place on your computer. You have now downloaded `Espapy`.
+`Espapy` is a much smaller size than `Anaconda` at under 10 MB. To download it, click the green `↓ Code` button at the top of this page. That should open up a menu where one of the options is `Download ZIP`. Click on `Download ZIP` and a compressed ZIP file that contains `Espapy` will download. It should be called `Espapy-master`. After the download completes, extract the contents of the ZIP file to an accessible place on your computer. If you are on MacOS, you can extract the contents of the ZIP file by double-clicking on it. If you are on Windows, you can right-click on the ZIP file and select the `Extract All...` option. After you extract the files, you have finished this step.
 
 
 ### Step 3: Running Espapy ###
