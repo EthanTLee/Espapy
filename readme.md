@@ -47,6 +47,10 @@ Now in order to run Espapy we have to move inside of the `Espapy-master` folder 
 
 Last, let's run Espapy. Do this by running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up.
 
+#### Windows ####
+
+Work in progress.
+
 ## Dependencies ##
 
 Matplotlib, PyQT, Astropy, numpy
