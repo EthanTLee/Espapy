@@ -45,7 +45,7 @@ Let's also say that we extracted `Espapy` to our `Downloads` folder. In order to
 
 Now in order to run Espapy we have to move inside of the `Espapy-master` folder we extracted. Use the `cd Espapy-master` command to do this.
 
-Last, let's run Espapy. Do this by running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up.
+Now that we are in the right place, let's run Espapy. Do this by running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up.
 
 #### Windows ####
 
@@ -79,7 +79,7 @@ Let's also say that we extracted `Espapy` to our `Downloads` folder. In order to
 
 Now in order to run Espapy we have to move inside of the `Espapy-master` folder we extracted. Use the `cd Espapy-master` command to do this (you may have to do this twice).
 
-Last, let's run Espapy. Do this by typing and running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up. 
+Now that we are in the right place, let's run Espapy. Do this by typing and running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up. 
 
 Note: It may take up to 30 seconds to run.
 
@@ -95,10 +95,4 @@ Install PyQT: `conda install -c anaconda pyqt`
 Install Astropy: `conda install -c anaconda astropy`
 
 Install Numpy: `conda install numpy`
-
-## How to run ##
-
-First install the dependencies, then run the `espapy.py` file contained in this directory.
-
-Run using: `python espapy.py`
 
