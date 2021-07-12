@@ -49,7 +49,40 @@ Last, let's run Espapy. Do this by running the `python espapy.py` command. This 
 
 #### Windows ####
 
-Work in progress.
+In order to run Espapy, first open up the `Anaconda Prompt` application that comes with Anaconda. You can do this by using the `search` tool like so:
+
+![windows1](docs/running_on_windows1.png)
+
+We will use Anaconda Prompt to run `Espapy`. 
+
+After you open `Anaconda Prompt`, the next thing to do is to navigate to the folder where you extracted `Espapy`. This is similar to navigating through folders using `File Explorer`. Let's see our current location by looking at the most current line in our Anaconda Prompt, which should look something like:
+```
+(base) C:\Users\your_username>
+```
+The `C:\Users\your_username` is called a 'path' and represents a location within your computer. In this case it shows you your current location.
+
+Now that we know where we are, let's see what kinds of things we have in our current location. To do this type `dir` and press `enter`. You should see a list of files and folders appear. 
+
+For example, say that `dir` gave us the following:
+
+```
+07/12/2021  11:25 AM    <DIR>          Desktop
+07/10/2021  04:55 PM    <DIR>          Documents
+07/10/2021  07:29 PM    <DIR>          Downloads
+04/17/2021  07:39 PM    <DIR>          Pictures
+02/23/2021  10:41 PM    <DIR>          Saved Games
+```
+
+Where things like `Desktop`, `Documents`, etc are folders.
+
+Let's also say that we extracted `Espapy` to our `Downloads` folder. In order to move to our `Downloads` folder, we type `cd Downloads` and hit `enter `. You should now be in the `Downloads` folder.
+
+Now in order to run Espapy we have to move inside of the `Espapy-master` folder we extracted. Use the `cd Espapy-master` command to do this (you may have to do this twice).
+
+Last, let's run Espapy. Do this by typing and running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up. 
+
+Note: It may take up to 30 seconds to run.
+
 
 ## Dependencies ##
 
