@@ -32,9 +32,9 @@ In order to run Espapy, first open up the `Terminal` application. You can do thi
 
 After you open `Terminal`, the next thing to do is to navigate to the folder where you extracted `Espapy`. This is similar to navigating through folders using `Finder`. Let's see our current location by typing `pwd` into Terminal and pressing `enter`. You should see some line like `/Users/your_username` appear in the window. This is called a 'path' and represents a location within your computer.
 
-Now that we know where we are, let's see what kinds of things we have in our current location. To do this type `ls` and press `enter`. You should see a list of files and folders appear.
+Now that we know where we are, let's see what kinds of things we have in our current location. To do this type `ls` and press `enter`. You should see a list of files and folders appear. 
 
-Now let's try moving to one of these folders. For example, say that `ls` gave us the following:
+For example, say that `ls` gave us the following:
 
 ```
 Applications	Downloads	Music   
