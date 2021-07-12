@@ -19,7 +19,7 @@ After the download finishes, double click the file you downloaded to finish sett
 
 ### Step 2: Downloading Espapy ###
 
-`Espapy` is a much smaller size than `Anaconda` at under 10 MB. To download it, click the green `↓ Code` button at the top of this page. That should open up a menu where one of the options is `Download ZIP`. Click on `Download ZIP` and a compressed ZIP file that contains `Espapy` will download. After the download completes, extract the contents of the ZIP file to an accessible place on your computer. You have now downloaded `Espapy`.
+`Espapy` is a much smaller size than `Anaconda` at under 10 MB. To download it, click the green `↓ Code` button at the top of this page. That should open up a menu where one of the options is `Download ZIP`. Click on `Download ZIP` and a compressed ZIP file that contains `Espapy` will download. It should be called `Espapy-master`. After the download completes, extract the contents of the ZIP file to an accessible place on your computer. You have now downloaded `Espapy`.
 
 
 ### Step 3: Running Espapy ###
@@ -28,7 +28,24 @@ The instructions for running `Espapy` on Windows and MacOS are a little differen
 
 #### MacOS ####
 
-In order to run Espapy, first open up the `Terminal` application. You can do this by using the `Spotlight Search` tool or by double clicking the `Terminal` application in your `Utilities` folder. The `Utilities` folder is located in the `Applications` folder. `Terminal` is an application that allows you to type commands to your computer. 
+In order to run Espapy, first open up the `Terminal` application. You can do this by using the `Spotlight Search` tool or by double clicking the `Terminal` application in your `Utilities` folder. The `Utilities` folder is located in the `Applications` folder. `Terminal` is an application that allows you to use your computer in a different way. Using `Terminal`, you can do things like move files, create folders, and run applications.  We will use it to run `Anaconda`, which in turn will run `Espapy`. 
+
+After you open `Terminal`, the next thing to do is to navigate to the folder where you extracted `Espapy`. This is similar to navigating through folders using `Finder`. Let's see our current location by typing `pwd` into Terminal and pressing `enter`. You should see some line like `/Users/your_username` appear in the window. This is called a 'path' and represents a location within your computer.
+
+Now that we know where we are, let's see what kinds of things we have in our current location. To do this type `ls` and press `enter`. You should see a list of files and folders appear.
+
+Now let's try moving to one of these folders. For example, say that `ls` gave us the following:
+
+```
+Applications	Downloads	Music   
+Desktop		Library		Pictures 
+```
+
+Let's also say that we extracted `Espapy` to our `Downloads` folder. In order to move to our `Downloads` folder, we type `cd Downloads` and hit `enter `. You should now be in the `Downloads` folder.
+
+Now in order to run Espapy we have to move inside of the `Espapy-master` folder we extracted. Use the `cd Espapy-master` command to do this.
+
+Last, let's run Espapy. Do this by running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up.
 
 ## Dependencies ##
 
