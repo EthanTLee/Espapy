@@ -7,7 +7,7 @@ A simple data viewing and analysis tool for Espadons.
 
 Here are instructions for getting started with Espapy. These instructions will try to explain things from the very beginning. In the end you will be able to use Espapy.
 
-First we will download something called `Anaconda`, which is a computer program that helps us run other computer programs (in this case we will use `Anaconda` to run `Espapy`). Second, we will download `Espapy`. Third, we will run `Espapy` for the first time.
+First we will download something called `Anaconda`, which is a computer program that helps us run other computer programs (in this case we will use `Anaconda` to run `Espapy`). Second, we will download `Espapy`. Third, we will run `Espapy` for the first time. Last we will plot some Espadons data and look at some extra tools.
 
 ### Step 1: Downloading Anaconda ###
 
@@ -82,6 +82,39 @@ Now in order to run Espapy we have to move inside of the `Espapy-master` folder 
 Now that we are in the right place, let's run Espapy. Do this by typing and running the `python espapy.py` command. This will run Espapy using Anaconda. You have finished this step if a new window with some buttons opens up. 
 
 Note: It may take up to 30 seconds to run.
+
+
+### Step 4: Plotting some data ###
+
+Here we will plot some Espadons data using Espapy.
+
+#### Selecting a data file ####
+
+The first step is to select some Espadons data that you want to plot. To do this, you first need Espadons data in the form of a 'data file', which you should receive from someone. Next, please press the `browse` button in the upper right of the window. A new window should pop up. Choose the data file using this window. If some text similar to `/Users/my_user_name/Desktop/1834099in.s` appears in the text box to the right of the label `File: `, you have completed this step.
+
+#### Setting the plot limits ####
+
+Please use the textboxes labeled `Min wavelength (nm): ` and `Max wavelength (nm): ` to set the range of wavelengths you want to plot. For example, if I am interested in something between 500nm and 600nm, I would write `500` in the `Min wavelength (nm): ` textbox and `600` in the `Max wavelength (nm): ` textbox. If you don't know what range of wavelengths you are interested in, you can type in the suggested values of `450` and `1000`.
+
+The `Min intensity: ` and `Max intensity: ` textboxes are similar. Please use these to input the range of intensities you want to plot. For example, if I am interested in looking at intensities between 0 and 2, I would put `0` into the `Min intensity: ` textbox and `2` into the `Max intensity: ` textbox. You can also type in the suggested values if you don't know what you want.
+
+#### Pressing the plot button ####
+
+The next step is to press the `Plot` button. This should produce a rainbow plot of the data you selected. The portion of the data that is shown should also correspond to the wavelength and intensity ranges that you input in the previous step.
+
+### Step 5: Moving around on the plot ###
+
+There are also some tools that allow you to zoom-in, zoom-out, and pan on the plot. These tools are located in the tool bar in the upper left of the window, above where the data is plotted. 
+
+### Step 6: Using the Analysis Tools ###
+
+Espapy includes a couple other tools that may be useful for getting information out of the data. These tools are in a box labeled `Analysis Tools` in the lower right part of the window.
+
+#### Max / min ####
+The word extrema means 'maximum or minimum values'. In the tab labeled `Extrema` you will find two buttons that find the maximum and minimum values for you. The `Find local max` button will find the maximum value in the area you have plotted. It will draw a red dot at the maximum point, and it will output a message containing the wavelength and intensity of that point in the text box in the bottom left of the window. The `Find local min` button will do the same thing, except it will be finding a minimum value and drawing a blue dot.
+
+#### Full Width at Half Max ####
+Inside the tab labeled `Width`, there is a button labeled `Full width at half max`. This button will find the width of the largest peak in the plot at half of its maximum value. It will also draw a purple line where it has calculated the width to be. You need to specify the baseline value for this to work. 
 
 
 ## Dependencies ##

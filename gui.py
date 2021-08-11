@@ -66,7 +66,7 @@ class Gui(QMainWindow):
             check_axis_limit_inputs(x_lim, y_lim)
         except:
             self.text_display.add_text_line(
-                "Unable to plot: Wavelength must be between 300 nm and 1100 nm, and intensity must be between 0 and 10")
+                "Unable to plot: Wavelength must be between 300 nm and 1100 nm, and intensity must be between 0 and 10" + "\n")
             return
         file_path = self.file_loader.le_file.text()
         file_header_info = lib.extract_header_info(file_path)
@@ -90,7 +90,7 @@ class Gui(QMainWindow):
             str(max_point[1]) + " " +
             "found at " +
             str(max_point[0]) + " " +
-            "nm"
+            "nm" + "\n"
         )
 
     def on_find_local_min_button_clicked(self):
@@ -103,7 +103,7 @@ class Gui(QMainWindow):
             str(min_point[1]) + " " +
             "found at " +
             str(min_point[0]) + " " +
-            "nm"
+            "nm" + "\n"
         )
 
     def on_find_full_width_half_max_button_clicked(self):
@@ -119,7 +119,7 @@ class Gui(QMainWindow):
             str(right_intersection[0] - left_intersection[0]) +
             " nm" +
             " found at an intensity of " +
-            str(left_intersection[1])
+            str(left_intersection[1]) + "\n"
         )
 
     class Plot(QWidget):
