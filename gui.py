@@ -37,6 +37,8 @@ class Gui(QMainWindow):
         self.analysis_tools.find_min_button.clicked.connect(self.on_find_local_min_button_clicked)
         self.analysis_tools.find_width_at_half_max_button.clicked.connect(
             self.on_find_full_width_half_max_button_clicked)
+        self.analysis_tools.find_width_at_half_min_button.clicked.connect(
+            self.on_find_full_width_half_min_button_clicked)
 
         self.current_orders_data = []
 
@@ -110,6 +112,22 @@ class Gui(QMainWindow):
         order_datas = self.current_orders_data
         view_domain = self.plot.get_xlim()
         left_intersection, right_intersection = lib.find_intersections_with_half_max_of_local_max(order_datas,
+                                                                                                  view_domain, float(
+                self.analysis_tools.baseline_input.text()))
+        self.plot.plot([left_intersection[0], right_intersection[0]], [left_intersection[1], right_intersection[1]],
+                       color='purple')
+        self.text_display.add_text_line(
+            "Width of " +
+            str(right_intersection[0] - left_intersection[0]) +
+            " nm" +
+            " found at an intensity of " +
+            str(left_intersection[1]) + "\n"
+        )
+
+    def on_find_full_width_half_min_button_clicked(self):
+        order_datas = self.current_orders_data
+        view_domain = self.plot.get_xlim()
+        left_intersection, right_intersection = lib.find_intersections_with_half_min_of_local_min(order_datas,
                                                                                                   view_domain, float(
                 self.analysis_tools.baseline_input.text()))
         self.plot.plot([left_intersection[0], right_intersection[0]], [left_intersection[1], right_intersection[1]],
@@ -293,9 +311,11 @@ class Gui(QMainWindow):
             self.find_min_button = QPushButton("Find local min")
             self.width_finder_group_box = QGroupBox("Width Finder")
             self.find_width_at_half_max_button = QPushButton("Full width at half max")
+            self.find_width_at_half_min_button = QPushButton("Full width at half min")
             self.baseline_input = self.BaselineInput()
             self.width_finder_group_box_layout = QVBoxLayout()
             self.width_finder_group_box_layout.addWidget(self.find_width_at_half_max_button)
+            self.width_finder_group_box_layout.addWidget(self.find_width_at_half_min_button)
             self.width_finder_group_box_layout.addWidget(self.baseline_input)
             self.width_finder_group_box.setLayout(self.width_finder_group_box_layout)
 
@@ -310,6 +330,7 @@ class Gui(QMainWindow):
 
             self.width_tab_layout = QVBoxLayout()
             self.width_tab_layout.addWidget(self.find_width_at_half_max_button)
+            self.width_tab_layout.addWidget(self.find_width_at_half_min_button)
             self.width_tab_layout.addWidget(self.baseline_input)
             self.width_tab.setLayout(self.width_tab_layout)
 
