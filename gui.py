@@ -39,7 +39,10 @@ class Gui(QMainWindow):
             self.on_find_full_width_half_max_button_clicked)
         self.analysis_tools.find_width_at_half_min_button.clicked.connect(
             self.on_find_full_width_half_min_button_clicked)
-
+        self.analysis_tools.lines_halpha.clicked.connect(self.on_lines_halpha_button_clicked)
+        self.analysis_tools.lines_hbeta.clicked.connect(self.on_lines_hbeta_button_clicked)
+        self.analysis_tools.lines_hgamma.clicked.connect(self.on_lines_hgamma_button_clicked)
+        self.analysis_tools.lines_hdelta.clicked.connect(self.on_lines_hdelta_button_clicked)
         self.current_orders_data = []
 
         self.text_display.add_text_line("    -- Welcome to Espapy --")
@@ -62,8 +65,8 @@ class Gui(QMainWindow):
             assert 0 <= y_lim[1] <= 10
 
         self.plot.clear_all()
-        x_lim = (int(self.file_loader.le_wavelength_min.text()), int(self.file_loader.le_wavelength_max.text()))
-        y_lim = (int(self.file_loader.le_intensity_min.text()), int(self.file_loader.le_intensity_max.text()))
+        x_lim = (float(self.file_loader.le_wavelength_min.text()), float(self.file_loader.le_wavelength_max.text()))
+        y_lim = (float(self.file_loader.le_intensity_min.text()), float(self.file_loader.le_intensity_max.text()))
         try:
             check_axis_limit_inputs(x_lim, y_lim)
         except:
@@ -94,7 +97,19 @@ class Gui(QMainWindow):
             str(max_point[0]) + " " +
             "nm" + "\n"
         )
+    def on_lines_halpha_button_clicked(self):
+        self.plot.plot_vline(656.3, color='grey')
 
+    def on_lines_hbeta_button_clicked(self):
+        self.plot.plot_vline(486.1, color='grey')
+
+    def on_lines_hgamma_button_clicked(self):
+        self.plot.plot_vline(434.1, color='grey')
+
+    def on_lines_hdelta_button_clicked(self):
+        self.plot.plot_vline(410.1, color='grey')
+        
+        
     def on_find_local_min_button_clicked(self):
         order_datas = self.current_orders_data
         view_domain = self.plot.get_xlim()
@@ -179,6 +194,10 @@ class Gui(QMainWindow):
 
         def plot_point(self, point, color):
             self.canvas.axes.scatter(point[0], point[1], color=color)
+            self.canvas.draw()
+
+        def plot_vline(self, point, color):
+            self.canvas.axes.plot([point,point],self.canvas.axes.get_ylim(), linestyle='dashed', color=color)
             self.canvas.draw()
 
         def multi_plot(self, line_collection):
@@ -312,6 +331,11 @@ class Gui(QMainWindow):
             self.width_finder_group_box = QGroupBox("Width Finder")
             self.find_width_at_half_max_button = QPushButton("Full width at half max")
             self.find_width_at_half_min_button = QPushButton("Full width at half min")
+            self.lines_halpha= QPushButton("H alpha / 656.3 nm")
+            self.lines_hbeta= QPushButton("H beta  / 486.1 nm")
+            self.lines_hgamma= QPushButton("H gamma  / 434.1 nm")
+            self.lines_hdelta= QPushButton("H delta  / 419.1 nm")
+            
             self.baseline_input = self.BaselineInput()
             self.width_finder_group_box_layout = QVBoxLayout()
             self.width_finder_group_box_layout.addWidget(self.find_width_at_half_max_button)
@@ -322,6 +346,7 @@ class Gui(QMainWindow):
             self.tabs = QTabWidget()
             self.max_min_tab = QWidget()
             self.width_tab = QWidget()
+            self.lines_tab= QWidget()
 
             self.max_min_tab_layout = QVBoxLayout()
             self.max_min_tab_layout.addWidget(self.find_max_button)
@@ -334,9 +359,17 @@ class Gui(QMainWindow):
             self.width_tab_layout.addWidget(self.baseline_input)
             self.width_tab.setLayout(self.width_tab_layout)
 
+            self.lines_tab_layout = QVBoxLayout()
+            self.lines_tab_layout.addWidget(self.lines_halpha)
+            self.lines_tab_layout.addWidget(self.lines_hbeta)
+            self.lines_tab_layout.addWidget(self.lines_hgamma)
+            self.lines_tab_layout.addWidget(self.lines_hdelta)
+            
+            self.lines_tab.setLayout(self.lines_tab_layout)
+            
             self.tabs.addTab(self.max_min_tab, "Extrema")
             self.tabs.addTab(self.width_tab, "Width")
-
+            self.tabs.addTab(self.lines_tab, "Lines")
             self.inner_layout.addWidget(self.tabs)
 
             self.group_box.setLayout(self.inner_layout)
