@@ -115,9 +115,12 @@ Espapy includes a couple other tools that may be useful for getting information 
 #### Max / min ####
 The word extrema means 'maximum or minimum values'. In the tab labeled `Extrema` you will find two buttons that find the maximum and minimum values for you. The `Find local max` button will find the maximum value in the area you have plotted. It will draw a red dot at the maximum point, and it will output a message containing the wavelength and intensity of that point in the text box in the bottom left of the window. The `Find local min` button will do the same thing, except it will be finding a minimum value and drawing a blue dot.
 
+![max_and_min](docs/min_and_max.png)
+
 #### Full Width at Half Max ####
 Inside the tab labeled `Width`, there is a button labeled `Full width at half max`. This button will find the width of the largest peak in the plot at half of its maximum value. It will also draw a purple line where it has calculated the width to be. You need to specify the baseline value for this to work. 
 
+![width](docs/width.png)
 
 ## Dependencies ##
 
