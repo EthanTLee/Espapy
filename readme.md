@@ -102,6 +102,8 @@ The `Min intensity: ` and `Max intensity: ` textboxes are similar. Please use th
 
 The next step is to press the `Plot` button. This should produce a rainbow plot of the data you selected. The portion of the data that is shown should also correspond to the wavelength and intensity ranges that you input in the previous step.
 
+![overview](docs/overview.png)
+
 ### Step 5: Moving around on the plot ###
 
 There are also some tools that allow you to zoom-in, zoom-out, and pan on the plot. These tools are located in the tool bar in the upper left of the window, above where the data is plotted. 
